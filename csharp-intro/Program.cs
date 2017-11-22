@@ -11,25 +11,22 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var numbers = new int[3];
-            numbers[0] = 1;
+            var firstName = "John";
+            var lastName = "F.";
 
-            Console.WriteLine(numbers[0]);
-            Console.WriteLine(numbers[1]);
-            Console.WriteLine(numbers[2]);
+            var fullName = string.Format("My name is {0} {1}", firstName, lastName);
 
-            var flags = new bool[3];
-            flags[0] = true;
+            var names = new string[3] { "John", "Jack", "Jill" };
+            var formattedNames = string.Join(",", names);
 
-            Console.WriteLine(flags[0]);
-            Console.WriteLine(flags[1]);
-            Console.WriteLine(flags[2]);
+            Console.WriteLine(fullName);
+            Console.WriteLine(formattedNames);
 
-            var names = new string[3] { "Jack", "John", "Mary" };
-
-            Console.WriteLine(names[0]);
-            Console.WriteLine(names[1]);
-            Console.WriteLine(names[2]);
+            var text = @"Hi John
+Look at the following paths
+C:\folder1
+C:\folder2";
+            Console.WriteLine(text);
         }
     }
 }
