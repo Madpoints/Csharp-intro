@@ -7,31 +7,52 @@ using System.Threading.Tasks;
 
 namespace csharp_intro
 {
-    public class APerson
-    {
-        public int Age;
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            var number = 1;
-            Increment(number);
-            Console.WriteLine(number);
+            var season = Season.Autumn;
 
-            var person = new APerson() { Age = 20 };
-            MakeOld(person);
-            Console.WriteLine(person.Age);
-        }
+            switch (season)
+            {
+                case Season.Autumn:
+                case Season.Summer:
+                    Console.WriteLine("My favorite seasons");
+                    break;
+                default:
+                    Console.WriteLine("Unknown");
+                    break;
+            }
 
-        public static void Increment(int number)
-        {
-            number += 10;
-        }
+            bool isGoldCustomer = true;
 
-        public static void MakeOld(APerson person)
-        {
-            person.Age += 10;
+            //float price;
+            //if (isGoldCustomer)
+            //{
+            //    price = 19.95f;
+            //}
+            //else
+            //{
+            //    price = 29.95f;
+            //}
+
+            float price = (isGoldCustomer) ? 19.95f : 29.95f;
+
+            Console.WriteLine(price);
+
+            var hour = 10;
+            if (hour > 0 && hour < 12)
+            {
+                Console.WriteLine("Morning");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                Console.WriteLine("Afternoon");
+            }
+            else
+            {
+                Console.WriteLine("Night");
+            }
         }
     }
 }
