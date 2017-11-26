@@ -7,26 +7,28 @@ using System.Threading.Tasks;
 
 namespace csharp_intro
 {
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            var firstName = "John";
-            var lastName = "F.";
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method);
 
-            var fullName = string.Format("My name is {0} {1}", firstName, lastName);
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
 
-            var names = new string[3] { "John", "Jack", "Jill" };
-            var formattedNames = string.Join(",", names);
+            Console.WriteLine(method.ToString());
 
-            Console.WriteLine(fullName);
-            Console.WriteLine(formattedNames);
-
-            var text = @"Hi John
-Look at the following paths
-C:\folder1
-C:\folder2";
-            Console.WriteLine(text);
+            var methodName = "Express";
+            Console.WriteLine(methodName);
+            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine(shippingMethod);
         }
     }
 }
