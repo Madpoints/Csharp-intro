@@ -17,18 +17,15 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var method = ShippingMethod.Express;
-            Console.WriteLine((int)method);
+            var a = 10;
+            var b = a;
+            b++;
+            Console.WriteLine(string.Format("a: {0}, b: {1}", a, b));
 
-            var methodId = 3;
-            Console.WriteLine((ShippingMethod)methodId);
-
-            Console.WriteLine(method.ToString());
-
-            var methodName = "Express";
-            Console.WriteLine(methodName);
-            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
-            Console.WriteLine(shippingMethod);
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+            Console.WriteLine(string.Format("array1[0]: {0}, array2[0]: {1}", array1[0], array2[0]));
         }
     }
 }
