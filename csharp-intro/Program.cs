@@ -11,23 +11,17 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var name = "John Smith";
-            
-            //for (var i = 0; i < name.Length; i++)
-            //{
-            //    Console.WriteLine(name[i]);
-            //}
-
-            foreach (var letter in name)
+            while (true)
             {
-                Console.WriteLine(letter);
-            }
+                Console.Write("Type your name: ");
+                var input = Console.ReadLine();
 
-            var numbers = new int[] { 1, 2, 3, 4 };
-
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);
+                if (!String.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("@Echo: " + input);
+                    continue;
+                }
+                break;
             }
         }
     }
