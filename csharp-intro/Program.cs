@@ -11,47 +11,22 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var season = Season.Autumn;
-
-            switch (season)
+            for (var i = 1; i <= 10; i++)
             {
-                case Season.Autumn:
-                case Season.Summer:
-                    Console.WriteLine("My favorite seasons");
-                    break;
-                default:
-                    Console.WriteLine("Unknown");
-                    break;
+                if (i % 2  == 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
 
-            bool isGoldCustomer = true;
+            Console.WriteLine("\n");
 
-            //float price;
-            //if (isGoldCustomer)
-            //{
-            //    price = 19.95f;
-            //}
-            //else
-            //{
-            //    price = 29.95f;
-            //}
-
-            float price = (isGoldCustomer) ? 19.95f : 29.95f;
-
-            Console.WriteLine(price);
-
-            var hour = 10;
-            if (hour > 0 && hour < 12)
+            for (var i = 10; i >= 1; i--)
             {
-                Console.WriteLine("Morning");
-            }
-            else if (hour >= 12 && hour < 18)
-            {
-                Console.WriteLine("Afternoon");
-            }
-            else
-            {
-                Console.WriteLine("Night");
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
