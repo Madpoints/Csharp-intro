@@ -69,7 +69,8 @@ namespace csharp_intro
 
             Console.WriteLine();
 
-            //4.
+            //4.  ask the user to continuously enter a number or type "Quit" to exit. 
+            //Display the unique numbers that the user has entered.
             var nums = new List<int>();
 
             while (true)
@@ -90,7 +91,8 @@ namespace csharp_intro
                     Console.WriteLine(num);
             }
 
-            //5.
+            //5. Ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10).
+            //Display the 3 smallest numbers in the list.
             var n = "";
             var numArray = new int[5];
             var index = 0;
