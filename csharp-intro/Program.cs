@@ -11,29 +11,31 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            // Creating
-            var timeSpan = new TimeSpan(1, 2, 3);
-            var timeSpan1 = new TimeSpan(1, 0, 0);
-            var timeSpan2 = TimeSpan.FromHours(1);
+            var fullName = "Geralt of Rivia ";
+            Console.WriteLine("Trim: '{0}'", fullName.Trim());
+            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());
 
-            var start = DateTime.Now;
-            var end = DateTime.Now.AddMinutes(2);
-            var duration = end - start;
-            Console.WriteLine("Duration: " + duration);
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index + 1);
+            Console.WriteLine("FirstName: " + firstName);
+            Console.WriteLine("LastName: " + lastName);
 
-            // Properties
-            Console.WriteLine("Minutes: " + timeSpan.Minutes);
-            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
+            var names = fullName.Split(' ');
+            Console.WriteLine("FirstName: " + names[0]);
+            Console.WriteLine("LastName: {0} {1}", names[1] ,names[2]);
 
-            // Add
-            Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
-            Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+            Console.WriteLine(fullName.Replace("of Rivia", "the White Wolf"));
 
-            // ToString
-            Console.WriteLine("ToString: " + timeSpan.ToString());
+            if (String.IsNullOrWhiteSpace(" "))
+                Console.WriteLine("Invalid");
 
-            // Parse
-            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
+            var str = "25";
+            var age = Convert.ToByte(str);
+            Console.WriteLine(age);
+
+            float price = 29.95f;
+            Console.WriteLine(price.ToString("C0"));
         }
     }
 }
