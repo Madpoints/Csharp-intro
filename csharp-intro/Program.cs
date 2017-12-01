@@ -81,9 +81,9 @@ namespace csharp_intro
 
             foreach(var letter in word)
             {
-                for (var i = 0; i < vowels.Length; i++)
+                foreach (var vowel in vowels)
                 {
-                    if (letter == vowels[i])
+                    if (letter == vowel)
                         count++;
                 }
             }
