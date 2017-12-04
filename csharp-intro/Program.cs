@@ -7,20 +7,20 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var builder = new StringBuilder("Hello World");
-            builder
-                .Append('-', 10)
-                .AppendLine()
-                .Append("  Header")
-                .AppendLine()
-                .Append('-', 10)
-                .Replace('-', '+')
-                .Remove(0, 10)
-                .Insert(0, new string('-', 10));
+            Console.Write("What's your name? ");
+            var name = Console.ReadLine();
+            var reversed = ReverseName(name);
 
-            Console.WriteLine(builder);
+            Console.WriteLine("Reversed name: " + reversed);
+        }
 
-            Console.WriteLine("First char: " + builder[0]);
+        public static string ReverseName(string name)
+        {
+            var array = new char[name.Length];
+            for (var i = name.Length; i > 0; i--)
+                array[name.Length - i] = name[i - 1];
+
+            return new string(array);
         }
     }
 }
