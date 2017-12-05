@@ -9,22 +9,14 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            Directory.CreateDirectory(@"c:\temp\folder1");
+            var path = @"C:\Projects\Csharp-Intro\HelloWorld\HelloWorld.sln";
 
-            //var files = Directory.GetFiles(@"c:\Users\John\source\repos\csharp-intro", "*.sln*", SearchOption.AllDirectories);
-            //foreach (var file in files)
-            //    Console.WriteLine(file);
-            
+            Console.WriteLine("Extension Path: " + Path.GetExtension(path));
+            Console.WriteLine("File Name: " + Path.GetFileName(path));
+            Console.WriteLine("File Name without Extension: " + Path.GetFileNameWithoutExtension(path));
+            Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));
 
-            var directories = Directory.GetDirectories(@"c:\Users\John\source\repos\csharp-intro", "*.*", SearchOption.AllDirectories);
-            foreach (var directory in directories)
-                Console.WriteLine(directory);
-
-            Directory.Exists("...");
-
-            var directoryInfo = new DirectoryInfo("...");
-            directoryInfo.GetFiles();
-            directoryInfo.GetDirectories();
         }
+
     }
 }
