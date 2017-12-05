@@ -9,23 +9,22 @@ namespace csharp_intro
     {
         static void Main(string[] args)
         {
-            var path = @"c:\somefile.jpg";
-            File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
-            File.Delete(path);
-            if (File.Exists(path))
-            {
-                //
-            }
-            var content = File.ReadAllText(path);
+            Directory.CreateDirectory(@"c:\temp\folder1");
 
-            var fileInfo = new FileInfo(path);
-            fileInfo.CopyTo("...");
-            fileInfo.Delete();
-            if (fileInfo.Exists)
-            {
-                //
-            }
+            //var files = Directory.GetFiles(@"c:\Users\John\source\repos\csharp-intro", "*.sln*", SearchOption.AllDirectories);
+            //foreach (var file in files)
+            //    Console.WriteLine(file);
+            
 
+            var directories = Directory.GetDirectories(@"c:\Users\John\source\repos\csharp-intro", "*.*", SearchOption.AllDirectories);
+            foreach (var directory in directories)
+                Console.WriteLine(directory);
+
+            Directory.Exists("...");
+
+            var directoryInfo = new DirectoryInfo("...");
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
         }
     }
 }
